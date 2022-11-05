@@ -3,17 +3,21 @@ Follow this steps:
 1) openssl genrsa -out rootCA.key 2048
 2) openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 3) create a file named v3.ext and fill it with:
-   authorityKeyIdentifier=keyid,issuer
+
+
+authorityKeyIdentifier=keyid,issuer
+
 basicConstraints=CA:FALSE
+
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+
 subjectAltName = @alt_names
 
 [alt_names]
-DNS.1 = %%DOMAIN%%
-DNS.2 = *.%%DOMAIN%%
-4)cat v3.ext | sed s/%%DOMAIN%%/$COMMON_NAME/g > /tmp/v3.ext
-openssl x509 -req -in device.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out device.crt -days $NUM_OF_DAYS -sha256 -extfile /tmp/v3.ext
 
+DNS.1 = %%DOMAIN%%
+
+DNS.2 = *.%%DOMAIN%%
 
 4)run the sh script and get a file named *yourdomenname*.crt and device.key
 
