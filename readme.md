@@ -19,3 +19,4 @@ openssl x509 -req -in device.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateseria
 
 6) trust the certificate in system settings![qdn68hbbkgsi7dyzy7hzra8mvv4](https://user-images.githubusercontent.com/87041079/200117875-0e4bac55-c297-4df1-9966-0405dd10baf8.png)
 Congratulations, now you have a fully working localhost with ssl certificate
+If you have any questions you can dm me in my tg @cvltyxd
