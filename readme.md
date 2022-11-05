@@ -13,7 +13,10 @@ DNS.1 = %%DOMAIN%%
 DNS.2 = *.%%DOMAIN%%
 4)cat v3.ext | sed s/%%DOMAIN%%/$COMMON_NAME/g > /tmp/v3.ext
 openssl x509 -req -in device.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out device.crt -days $NUM_OF_DAYS -sha256 -extfile /tmp/v3.ext
+
+
 4)run the sh script and get a file named *yourdomenname*.crt and device.key
+
 5) add them to your localhost settings file by typing next lines (nginx example)
 
    ![8mv4rkzcwxfnlr6uxkilnenonhs](https://user-images.githubusercontent.com/87041079/200117883-5a7798ad-e9ad-4336-9d50-ca4f1d723b55.png)
