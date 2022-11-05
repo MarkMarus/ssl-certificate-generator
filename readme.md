@@ -1,8 +1,8 @@
 So i needed a SSL certificate for my localhost and couldn't find a solution generate a certificate that browser will trust. After a few hours i found out how to generate it correctly
 Follow this steps:
-1) openssl genrsa -out rootCA.key 2048
-2) openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
-3) create a file named v3.ext and fill it with:
+**1) openssl genrsa -out rootCA.key 2048
+**2) openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+**3) create a file named v3.ext and fill it with:
 
 
 authorityKeyIdentifier=keyid,issuer
